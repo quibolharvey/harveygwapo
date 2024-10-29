@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flawersandbatirflays</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa;
+    overflow: hidden;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .stem {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: drawStem 3s ease forwards;
+  }
+
+  .leaf {
+    opacity: 0;
+    transform: scale(0.1);
+    animation: growLeaf 1.5s ease forwards;
+    animation-fill-mode: forwards;
+  }
+
+  .petal {
+    opacity: 0;
+    transform: scale(0.1);
+    animation: bloomPetal 1.5s ease forwards;
+    animation-fill-mode: forwards;
+  }
+
+  .butterfly {
+    transform-origin: center;
+    animation: fly 8s linear infinite;
+  }
+
+  .wing {
+    transform-origin: center;
+    animation: flap 0.4s ease-in-out infinite alternate;
+  }
+
+  @keyframes drawStem {
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes growLeaf {
+    50% { opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes bloomPetal {
+    0% { opacity: 0; transform: scale(0.1); }
+    50% { opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes fly {
+    0% { transform: translate(50px, 100px) rotate(0deg); }
+    25% { transform: translate(200px, 50px) rotate(30deg); }
+    50% { transform: translate(350px, 200px) rotate(0deg); }
+    75% { transform: translate(200px, 350px) rotate(-30deg); }
+    100% { transform: translate(50px, 100px) rotate(0deg); }
+  }
+  @keyframes flap {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0.8); }
+  }
+</style>
+</head>
+<body>
+
+<svg viewBox="0 0 400 400">
+
+  <!-- Flower 1 -->
+  <g transform="translate(80, 280)">
+    <path class="stem" d="M0,80 Q0,40 0,0" stroke="green" stroke-width="2" fill="none"></path>
+    <path class="leaf" d="M0,50 C-10,40 -10,60 0,50" fill="green" style="animation-delay: 1.5s;"></path>
+    <path class="leaf" d="M0,30 C10,20 10,40 0,30" fill="green" style="animation-delay: 1.7s;"></path>
+    <circle class="petal" cx="0" cy="-5" r="6" fill="pink" style="animation-delay: 2s;"></circle>
+    <circle class="petal" cx="-5" cy="0" r="6" fill="pink" style="animation-delay: 2.2s;"></circle>
+    <circle class="petal" cx="5" cy="0" r="6" fill="pink" style="animation-delay: 2.4s;"></circle>
+    <circle class="petal" cx="0" cy="5" r="6" fill="pink" style="animation-delay: 2.6s;"></circle>
+  </g>
+
+  <!-- Flower 2 -->
+  <g transform="translate(150, 280)">
+    <path class="stem" d="M0,80 Q0,40 0,0" stroke="green" stroke-width="2" fill="none"></path>
+    <path class="leaf" d="M0,60 C-10,50 -10,70 0,60" fill="green" style="animation-delay: 1.8s;"></path>
+    <path class="leaf" d="M0,40 C10,30 10,50 0,40" fill="green" style="animation-delay: 2s;"></path>
+    <circle class="petal" cx="0" cy="-5" r="5" fill="yellow" style="animation-delay: 2.5s;"></circle>
+    <circle class="petal" cx="-4" cy="1" r="5" fill="yellow" style="animation-delay: 2.7s;"></circle>
+    <circle class="petal" cx="4" cy="1" r="5" fill="yellow" style="animation-delay: 2.9s;"></circle>
+    <circle class="petal" cx="0" cy="6" r="5" fill="yellow" style="animation-delay: 3.1s;"></circle>
+  </g>
+
+  <!-- Flower 3 -->
+  <g transform="translate(220, 280)">
+    <path class="stem" d="M0,80 Q0,40 0,0" stroke="green" stroke-width="2" fill="none"></path>
+    <path class="leaf" d="M0,50 C-10,40 -10,60 0,50" fill="green" style="animation-delay: 1.6s;"></path>
+    <path class="leaf" d="M0,30 C10,20 10,40 0,30" fill="green" style="animation-delay: 1.8s;"></path>
+    <circle class="petal" cx="0" cy="-5" r="5" fill="purple" style="animation-delay: 2.1s;"></circle>
+    <circle class="petal" cx="-5" cy="0" r="5" fill="purple" style="animation-delay: 2.3s;"></circle>
+    <circle class="petal" cx="5" cy="0" r="5" fill="purple" style="animation-delay: 2.5s;"></circle>
+    <circle class="petal" cx="0" cy="5" r="5" fill="purple" style="animation-delay: 2.7s;"></circle>
+  </g>
+
+  <!-- Flower 4 -->
+  <g transform="translate(300, 280)">
+    <path class="stem" d="M0,80 Q0,40 0,0" stroke="green" stroke-width="2" fill="none"></path>
+    <path class="leaf" d="M0,60 C-10,50 -10,70 0,60" fill="green" style="animation-delay: 1.9s;"></path>
+    <path class="leaf" d="M0,40 C10,30 10,50 0,40" fill="green" style="animation-delay: 2.1s;"></path>
+    <circle class="petal" cx="0" cy="-6" r="7" fill="orange" style="animation-delay: 2.6s;"></circle>
+    <circle class="petal" cx="-5" cy="0" r="7" fill="orange" style="animation-delay: 2.8s;"></circle>
+    <circle class="petal" cx="5" cy="0" r="7" fill="orange" style="animation-delay: 3s;"></circle>
+    <circle class="petal" cx="0" cy="6" r="7" fill="orange" style="animation-delay: 3.2s;"></circle>
+  </g>
+
+  <!-- Butterfly 1 -->
+  <g class="butterfly" style="animation-delay: 1s;">
+    <circle class="wing" cx="5" cy="0" r="4" fill="orange" opacity="0.8"></circle>
+    <circle class="wing" cx="-5" cy="0" r="4" fill="orange" opacity="0.8"></circle>
+    <line x1="-2" y1="0" x2="2" y2="0" stroke="black" stroke-width="1"></line>
+  </g>
+
+  <!-- Butterfly 2 -->
+  <g class="butterfly" style="animation-delay: 2s;">
+    <circle class="wing" cx="5" cy="0" r="4" fill="blue" opacity="0.8"></circle>
+    <circle class="wing" cx="-5" cy="0" r="4" fill="blue" opacity="0.8"></circle>
+    <line x1="-2" y1="0" x2="2" y2="0" stroke="black" stroke-width="1"></line>
+  </g>
+
+  <!-- Butterfly 3 -->
+  <g class="butterfly" style="animation-delay: 3s;">
+    <circle class="wing" cx="5" cy="0" r="4" fill="purple" opacity="0.8"></circle>
+    <circle class="wing" cx="-5" cy="0" r="4" fill="purple" opacity="0.8"></circle>
+    <line x1="-2" y1="0" x2="2" y2="0" stroke="black" stroke-width="1"></line>
+  </g>
+
+</svg>
+
+</body>
+</html>
